@@ -29,6 +29,28 @@ create table Subject(
  alter table Mark
  add unique (SubID, StudentID);
  alter table Mark
-add foreign key(SubID) REFERENCES Subject(SubID),
+ add foreign key(SubID) REFERENCES Subject(SubID),
  add FOREIGN KEY (StudentId) REFERENCES Student (StudentId);
+ alter table Class
+ modify StartDate date;
+ 
+ 
+ insert into Class (ClassName,StartDate,Status) values ('A1','2008-12-20',1);
+ insert into Class (ClassName,StartDate,Status) values ('A2','2008-12-22',1);
+ insert into Class (ClassName,StartDate,Status) values ('B3',current_date,0);
+ 
+ insert into Student (StudentID,StudentName,Address,Phone,Status,ClassID) values (1,'Hung','Ha noi','0912113113',1,1);
+ insert into Student (StudentID,StudentName,Address,Phone,Status,ClassID) values (2,'Hoa','Hai Phong','',1,1);
+ insert into Student (StudentID,StudentName,Address,Phone,Status,ClassID) values (3,'Manh','HCM','0123123123',0,2);
+ 
+ insert into subject (SubName,Credit,Status) values ('CF',5,1);
+ insert into subject (SubName,Credit,Status) values ('C',6,1);
+ insert into subject (SubName,Credit,Status) values ('HDJ',5,1);
+ insert into subject (SubName,Credit,Status) values ('RDBMS',10,1);
+ 
+ insert into Mark (SubID,StudentID,Mark,ExamTimes) values (1,1,8,1);
+ insert into Mark (SubID,StudentID,Mark,ExamTimes) values (1,2,10,2);
+ insert into Mark (SubID,StudentID,Mark,ExamTimes) values (2,1,12,1);
+ 
+ 
  
