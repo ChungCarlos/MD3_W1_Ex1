@@ -1,0 +1,11 @@
+.thumbnail{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.caption{
+    text-align: center;
+}
+.pa{
+    text-decoration: none;
+}
